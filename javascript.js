@@ -24,21 +24,34 @@ function playRound(humanChoice, computerChoice) {
 
     humanChoice = humanChoice.toLowerCase();
 
-    if (humanChoice === rock && computerChoice === paper)
+    if (humanChoice === rock && computerChoice === paper) {
+        computerScore++;
         console.log("You lose! Paper beats rock!");
-    else if(humanChoice === rock && computerChoice === scissors)
+    }
+    else if(humanChoice === rock && computerChoice === scissors) {
+        humanScore++;
         console.log("You win! Rock beats scissors");
-    else if(humanChoice === paper && computerChoice === rock)
+    }
+    else if(humanChoice === paper && computerChoice === rock) {
+        humanScore++;
         console.log("You win! Paper beats rock!");
-    else if(humanChoice === paper && computerChoice === scissors)
+    }
+    else if(humanChoice === paper && computerChoice === scissors) {
+        computerScore++;
         console.log("You lose! Scissors beat paper!");
-    else if (humanChoice === scissors && computerChoice === rock)
+    }
+    else if (humanChoice === scissors && computerChoice === rock) {
+        computerScore++;
         console.log("You lose! Rock beats scissors!");
-    else if(humanChoice === scissors && computerChoice === paper)
+    }
+    else if(humanChoice === scissors && computerChoice === paper) {
+         humanScore++;
          console.log("You win! Scissors beat paper!");
+    }
 }
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 playRound(humanSelection,computerSelection);
+console.log(humanScore,computerScore)
