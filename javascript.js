@@ -13,4 +13,8 @@ function getComputerChoice() {
     else return scissors;
 }
 
+function getHumanChoice() {
+return prompt("If you want to play, write 'rock', 'paper' or 'scissors'",);
+}
 
+console.log(getHumanChoice());
