@@ -18,3 +18,6 @@ return prompt("If you want to play, write 'rock', 'paper' or 'scissors'",);
 }
 
 console.log(getHumanChoice());
+
+let humanScore = 0;
+let computerScore = 0;
