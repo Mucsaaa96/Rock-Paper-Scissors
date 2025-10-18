@@ -1,1 +1,5 @@
-console.log("Hello,World!")
+console.log("Hello,World!");
+
+let rock = "rock";
+let paper = "paper";
+let scissors = "scissors";
