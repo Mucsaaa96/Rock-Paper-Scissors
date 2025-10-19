@@ -32,6 +32,9 @@ function playRound(humanChoice, computerChoice) {
         humanScore++;
         console.log("You win! Rock beats scissors");
     }
+    else if(humanChoice === rock && computerChoice === rock) {
+        console.log("It's a draw.");
+    }
     else if(humanChoice === paper && computerChoice === rock) {
         humanScore++;
         console.log("You win! Paper beats rock!");
@@ -40,6 +43,8 @@ function playRound(humanChoice, computerChoice) {
         computerScore++;
         console.log("You lose! Scissors beat paper!");
     }
+    else if(humanChoice === paper && computerChoice === paper) {
+        console.log("It's a draw.");
     else if (humanChoice === scissors && computerChoice === rock) {
         computerScore++;
         console.log("You lose! Rock beats scissors!");
@@ -48,10 +53,18 @@ function playRound(humanChoice, computerChoice) {
          humanScore++;
          console.log("You win! Scissors beat paper!");
     }
+    else if(humanChoice === scissors && computerChoice === scissors) {
+        console.log("It's a drow.");
 }
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-playRound(humanSelection,computerSelection);
-console.log(humanScore,computerScore)
+
+
+
+function playGame() {
+
+}
+
+playGame();
