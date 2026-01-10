@@ -2,6 +2,11 @@ body {
     font-size: 20px;
 }
 
+h1 {
+    text-align: center;
+    text-shadow: 0,5cm;
+}
+
 button {
     background-color: rgb(26, 123, 189);
     color: rgb(255, 255, 255);
