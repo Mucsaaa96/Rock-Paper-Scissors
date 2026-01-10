@@ -1,0 +1,17 @@
+body {
+    font-size: 20px;
+}
+
+button {
+    background-color: rgb(26, 123, 189);
+    color: rgb(255, 255, 255);
+    border-radius: 15px ;
+    margin: 20px;
+    padding:0px 15px;
+    font-size: 15px;
+}
+
+#rps-buttons {
+    display: flex;
+    justify-content: center;
+}
