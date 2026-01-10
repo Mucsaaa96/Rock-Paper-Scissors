@@ -12,9 +12,12 @@ function getComputerChoice() {
         return paper;
     else return scissors;
 }
+const rockBtn = document.querySelector("#rock")
+const paperBtn = document.querySelector("#paper")
+const scissorsBtn = document.querySelector("#scissors")
 
 function getHumanChoice() {
-return prompt("If you want to play, write 'rock', 'paper' or 'scissors'",);
+
 }
 
 let humanScore = 0;
@@ -59,26 +62,7 @@ function playRound(humanChoice, computerChoice) {
     }  
 }
 
-function playGame() {
 
-    for (let round = 0; round < 5; round++) {
-        playRound(getHumanChoice(),getComputerChoice());
-        console.log(`Your score: ${humanScore}   Computer score: ${computerScore}`)
-    }
-    if (humanScore > computerScore) {
-        console.log(`Final scores: ${humanScore} : ${computerScore}.
-            You win the game!`);
-    }
-    else if (computerScore > humanScore) {
-        console.log(`Final scores: ${humanScore} : ${computerScore}.
-            You lose the game!`);
-    }
-    else console.log(`Final scores: ${humanScore} : ${computerScore}.
-            It's a draw! Try again!`);
-    }
-
-
-playGame();
 
 
 
