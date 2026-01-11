@@ -35,39 +35,26 @@ let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
 
-    if (humanChoice == rock && computerChoice == paper) {
+    if (humanChoice === rock && computerChoice === paper ||
+        humanChoice === paper && computerChoice === scissors ||
+        humanChoice === scissors && computerChoice === rock
+    ) {
         computerScore++;
-        console.log("You lose! Paper beats rock!");
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
     }
-    else if(humanChoice == rock && computerChoice == scissors) {
+    else if(humanChoice === rock && computerChoice === scissors ||
+            humanChoice === paper && computerChoice === rock ||
+            humanChoice === scissors && computerChoice === paper
+    ) {
         humanScore++;
-        console.log("You win! Rock beats scissors");
+        console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
     }
-    else if(humanChoice == rock && computerChoice == rock) {
-        console.log("It's a draw.");
+    else if(humanChoice === rock && computerChoice === rock ||
+            humanChoice === paper && computerChoice === paper ||
+            humanChoice === scissors && computerChoice === scissors
+    ) {
+        console.log(`It's a draw, ${humanChoice} and ${computerChoice} are same!`);
     }
-    else if(humanChoice === paper && computerChoice === rock) {
-        humanScore++;
-        console.log("You win! Paper beats rock!");
-    }
-    else if(humanChoice === paper && computerChoice === scissors) {
-        computerScore++;
-        console.log("You lose! Scissors beat paper!");
-    }
-    else if(humanChoice === paper && computerChoice === paper) {
-        console.log("It's a draw.");
-    }
-    else if (humanChoice === scissors && computerChoice === rock) {
-        computerScore++;
-        console.log("You lose! Rock beats scissors!");
-    }
-    else if(humanChoice === scissors && computerChoice === paper) {
-         humanScore++;
-         console.log("You win! Scissors beat paper!");
-    }
-    else if(humanChoice === scissors && computerChoice === scissors) {
-        console.log("It's a draw.");
-    }  
 }
 
 const humanChoice = getHumanChoice();
