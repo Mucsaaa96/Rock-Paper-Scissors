@@ -12,30 +12,38 @@ function getComputerChoice() {
         return paper;
     else return scissors;
 }
-const rockBtn = document.querySelector("#rock")
-const paperBtn = document.querySelector("#paper")
-const scissorsBtn = document.querySelector("#scissors")
+
 
 function getHumanChoice() {
+    const buttons = document.querySelector("#rps-buttons");
+    buttons.addEventListener("click", (event) => {
+        event.preventDefault();
+        if(!event.target.id) return;
+        //console.log(targetId);
 
+        const humanChoice = event.target.id;
+        const computerChoice = getComputerChoice();
+
+        playRound(humanChoice, computerChoice);
+    })
 }
+
+
 
 let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
 
-    humanChoice = humanChoice.toLowerCase();
-
-    if (humanChoice === rock && computerChoice === paper) {
+    if (humanChoice == rock && computerChoice == paper) {
         computerScore++;
         console.log("You lose! Paper beats rock!");
     }
-    else if(humanChoice === rock && computerChoice === scissors) {
+    else if(humanChoice == rock && computerChoice == scissors) {
         humanScore++;
         console.log("You win! Rock beats scissors");
     }
-    else if(humanChoice === rock && computerChoice === rock) {
+    else if(humanChoice == rock && computerChoice == rock) {
         console.log("It's a draw.");
     }
     else if(humanChoice === paper && computerChoice === rock) {
@@ -61,6 +69,11 @@ function playRound(humanChoice, computerChoice) {
         console.log("It's a draw.");
     }  
 }
+
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+
+playRound(humanChoice, computerChoice);
 
 
 
