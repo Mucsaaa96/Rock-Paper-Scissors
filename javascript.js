@@ -44,6 +44,7 @@ function playRound(humanChoice, computerChoice) {
     ) {
         computerScore++;
         display.textContent = `You lose! ${computerChoice} beats ${humanChoice}!`;
+        result.textContent = `Player score: ${humanScore} ___ Computer score: ${computerScore}`; 
     }
     else if(humanChoice === rock && computerChoice === scissors ||
             humanChoice === paper && computerChoice === rock ||
@@ -51,21 +52,28 @@ function playRound(humanChoice, computerChoice) {
     ) {
         humanScore++;
         display.textContent = `You win! ${humanChoice} beats ${computerChoice}!`;
+        result.textContent = `Player score: ${humanScore} ___ Computer score: ${computerScore}`
     }
     else if(humanChoice === rock && computerChoice === rock ||
             humanChoice === paper && computerChoice === paper ||
             humanChoice === scissors && computerChoice === scissors
     ) {
         display.textContent = `It's a draw, ${humanChoice} and ${computerChoice} are same!`;
+        result.textContent = `Player score: ${humanScore} ___ Computer score: ${computerScore}`
     }
 }
 
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
-
-playRound(humanChoice, computerChoice);
 
 
+function playGame()  {
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+
+    playRound(humanChoice, computerChoice);
+   // 
+}
+
+playGame();
 
 
 
