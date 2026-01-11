@@ -17,7 +17,7 @@ function getComputerChoice() {
 }
 
 
-function getHumanChoice() {
+function playGame() {
     const buttons = document.querySelector("#rps-buttons");
     buttons.addEventListener("click", (event) => {
         event.preventDefault();
@@ -72,7 +72,7 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-getHumanChoice();
+playGame();
 
 
 
