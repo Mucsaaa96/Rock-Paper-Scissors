@@ -4,6 +4,9 @@ let rock = "rock";
 let paper = "paper";
 let scissors = "scissors";
 
+const result = document.querySelector("#result");
+const display = document.querySelector("#display")
+
 function getComputerChoice() {
     let computerAnswer = Math.random();
         if (computerAnswer > 0.66)
@@ -40,20 +43,20 @@ function playRound(humanChoice, computerChoice) {
         humanChoice === scissors && computerChoice === rock
     ) {
         computerScore++;
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
+        display.textContent = `You lose! ${computerChoice} beats ${humanChoice}!`;
     }
     else if(humanChoice === rock && computerChoice === scissors ||
             humanChoice === paper && computerChoice === rock ||
             humanChoice === scissors && computerChoice === paper
     ) {
         humanScore++;
-        console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
+        display.textContent = `You win! ${humanChoice} beats ${computerChoice}!`;
     }
     else if(humanChoice === rock && computerChoice === rock ||
             humanChoice === paper && computerChoice === paper ||
             humanChoice === scissors && computerChoice === scissors
     ) {
-        console.log(`It's a draw, ${humanChoice} and ${computerChoice} are same!`);
+        display.textContent = `It's a draw, ${humanChoice} and ${computerChoice} are same!`;
     }
 }
 
