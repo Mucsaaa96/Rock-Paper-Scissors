@@ -21,20 +21,32 @@ function getHumanChoice() {
     const buttons = document.querySelector("#rps-buttons");
     buttons.addEventListener("click", (event) => {
         event.preventDefault();
+        if(gameOver) return;
         if(!event.target.id) return;
-        //console.log(targetId);
 
         const humanChoice = event.target.id;
         const computerChoice = getComputerChoice();
 
         playRound(humanChoice, computerChoice);
+
+        result.textContent = `Player score: ${humanScore} ___ Computer score: ${computerScore}`; 
+
+        if(humanScore === 5 || computerScore === 5) {
+            gameOver = true;
+            if(humanScore === 5) {
+                display.textContent = "Game over! You win the game!"
+            }
+            else if(computerScore === 5) {
+                display.textContent = "Game over! You lose the game!"
+            }
+        }
     })
 }
 
-
-
 let humanScore = 0;
 let computerScore = 0;
+let gameOver = false;
+
 
 function playRound(humanChoice, computerChoice) {
 
@@ -44,7 +56,6 @@ function playRound(humanChoice, computerChoice) {
     ) {
         computerScore++;
         display.textContent = `You lose! ${computerChoice} beats ${humanChoice}!`;
-        result.textContent = `Player score: ${humanScore} ___ Computer score: ${computerScore}`; 
     }
     else if(humanChoice === rock && computerChoice === scissors ||
             humanChoice === paper && computerChoice === rock ||
@@ -52,28 +63,19 @@ function playRound(humanChoice, computerChoice) {
     ) {
         humanScore++;
         display.textContent = `You win! ${humanChoice} beats ${computerChoice}!`;
-        result.textContent = `Player score: ${humanScore} ___ Computer score: ${computerScore}`
     }
     else if(humanChoice === rock && computerChoice === rock ||
             humanChoice === paper && computerChoice === paper ||
             humanChoice === scissors && computerChoice === scissors
     ) {
         display.textContent = `It's a draw, ${humanChoice} and ${computerChoice} are same!`;
-        result.textContent = `Player score: ${humanScore} ___ Computer score: ${computerScore}`
     }
 }
 
+getHumanChoice();
 
 
-function playGame()  {
-    const humanChoice = getHumanChoice();
-    const computerChoice = getComputerChoice();
 
-    playRound(humanChoice, computerChoice);
-   // 
-}
-
-playGame();
 
 
 
